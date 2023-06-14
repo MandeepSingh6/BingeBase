@@ -3,7 +3,7 @@ import arrayShuffle from "array-shuffle";
 
 import { API_BASE_URL } from "../config";
 
-const API_KEY_PARAMS = import.meta.env.VITE_API_KEY_PARAMS;
+const API_KEY_PARAMS = process.env.API_KEY_PARAMS;
 
 export const getTrendingShows = async () => {
   const res1 = await axios.get(
