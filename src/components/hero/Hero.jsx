@@ -33,14 +33,14 @@ const Hero = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row md:gap-1">
-        <div className="w-full sm:w-[80%] md:min-w-[30%] md:max-w-[30%]">
+      <div className="flex flex-col sm:flex-row sm:gap-2">
+        <div className="w-full md:min-w-[300px] md:max-w-[300px]">
           {!showVideo ? (
             <img
               className="w-full"
               src={BACKDROP_BASE_URL + currentShow.poster_path}
               alt={currentShow.title || currentShow.name}
-              onClick={handlePosterClick}
+              // onClick={handlePosterClick}
             />
           ) : (
             <iframe
@@ -52,7 +52,7 @@ const Hero = () => {
             ></iframe>
           )}
         </div>
-        <div className="w-full md:min-w-2/4 md:max-w-2/4">
+        <div className="w-full sm:min-w-2/4 sm:max-w-2/4 relative ">
           {showVideo && (
             <p
               onClick={() => setShowVideo(false)}
@@ -78,13 +78,21 @@ const Hero = () => {
               ? "Not Rated"
               : currentShow.vote_average.toFixed(1)}
           </p>
-          <p className="text-justify font-thin mb-2 max-h-[150px] md:max-h-[128px] lg:max-h-[150px] xl:max-h-[200px]  overflow-y-scroll">
+          <p className="text-justify font-thin mb-2 max-h-[135px] sm:max-h-[180px] md:max-h-[125px] xl:max-h-[200px] overflow-y-scroll">
             {currentShow.overview}
           </p>
+
+          <div className="hidden sm:block absolute bottom-0 left-0 right-0 text-lg">
+            <h3 className="">Top Cast Members</h3>
+            <CastMembersList
+              id={currentShow.id}
+              type={currentShow.media_type}
+            />
+          </div>
         </div>
       </div>
-      <div>
-        <h3 className="md:mt-2">Top Cast Members</h3>
+      <div className="sm:hidden">
+        <h3 className="text-lg">Top Cast Members</h3>
         <CastMembersList id={currentShow.id} type={currentShow.media_type} />
       </div>
     </>
