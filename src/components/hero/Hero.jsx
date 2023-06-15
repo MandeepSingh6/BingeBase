@@ -9,6 +9,7 @@ import { getYoutubeVideoId } from "../../apis/apiRequest";
 const Hero = () => {
   const dispatch = useDispatch();
   const currentShow = useSelector((state) => state.currentShow);
+  console.log(currentShow);
   const [trailerId, setTrailerId] = useState("");
   const [showVideo, setShowVideo] = useState(false);
   const handleClick = () => {
@@ -33,12 +34,12 @@ const Hero = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row md:gap-1">
-        <div className="w-full md:min-w-2/4 md:max-w-2/4">
+        <div className="w-full sm:w-[80%] md:min-w-[30%] md:max-w-[30%]">
           {!showVideo ? (
             <img
               className="w-full"
-              src={BACKDROP_BASE_URL + currentShow.backdrop_path}
-              alt=""
+              src={BACKDROP_BASE_URL + currentShow.poster_path}
+              alt={currentShow.title || currentShow.name}
               onClick={handlePosterClick}
             />
           ) : (

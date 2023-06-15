@@ -13,18 +13,15 @@ const WatchlistPage = () => {
   return (
     <>
       <h2 className="text-xl font-bold my-2 text-center">Watchlist</h2>
-      <div className="grid grid-cols-fluid gap-2">
+      <div className="grid grid-cols-fluid">
         {shows.map((show) => (
-          <div
-            key={show.id}
-            className="bg-gray-300 flex flex-col min-w-[200px] max-w-[240px] mx-auto 2xl:max-w-[340px] md:max-w-[300px]"
-          >
+          <div key={show.id} className="relative bg-black m-auto mb-4">
             <ThumbnailCard {...show} />
             <button
-              className="py-1 hover:bg-red-500 hover:text-white"
+              className="bg-gray-500 hover:bg-red-600 text-white absolute right-0 top-0 p-3"
               onClick={() => dispatch(remove(show.id))}
             >
-              Remove
+              X
             </button>
           </div>
         ))}

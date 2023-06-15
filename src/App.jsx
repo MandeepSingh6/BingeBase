@@ -10,7 +10,7 @@ const App = () => {
   const dispatch = useDispatch();
   const savedShows = useSelector((state) => state.watchlist);
   const trendingShows = useSelector((state) => state.trendingShows);
-
+  console.log("first");
   useEffect(() => {
     const fetchTrendingShows = async () => {
       const shows = await getTrendingShows();
@@ -22,7 +22,7 @@ const App = () => {
 
   useEffect(() => {
     return localStorage.setItem("watchlistItems", JSON.stringify(savedShows));
-  }, []);
+  }, [savedShows]);
 
   if (trendingShows.length < 1) {
     return <h1>Loading...</h1>;

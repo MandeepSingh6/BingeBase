@@ -3,7 +3,8 @@ import arrayShuffle from "array-shuffle";
 
 import { API_BASE_URL } from "../config";
 
-const API_KEY_PARAMS = import.meta.env.VITE_API_KEY_PARAMS;
+// const API_KEY_PARAMS = import.meta.env.VITE_API_KEY_PARAMS;
+const API_KEY_PARAMS = "?api_key=88b1ae57b6a3cc5e1076c14d72ecb7ab";
 
 export const getTrendingShows = async () => {
   const res1 = await axios.get(
@@ -54,6 +55,8 @@ export const getShow = async (type, id) => {
       type === "movie"
         ? await axios.get(API_BASE_URL + "/movie/" + id + API_KEY_PARAMS)
         : await axios.get(API_BASE_URL + "/tv/" + id + API_KEY_PARAMS);
+
+    console.log(res.data);
 
     return { ...res?.data, media_type: type };
   }
