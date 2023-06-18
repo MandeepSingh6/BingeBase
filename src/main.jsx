@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createHashRouter,
+} from "react-router-dom";
 import "./global.css";
 
 import App from "./App.jsx";
@@ -11,9 +15,9 @@ import store from "./store/store";
 import ActorDetails from "./pages/ActorDetails";
 import WatchlistPage from "./pages/WatchlistPage";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "https://binge-base.vercel.app",
+    path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
