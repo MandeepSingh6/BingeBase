@@ -7,7 +7,7 @@ const RecommendedShowsList = () => {
   return (
     <div className="mt-4">
       <h3 className="text-xl md:text-2xl font-bold">Recommendations</h3>
-      <div className="flex  overflow-scroll gap-1 lg:gap-2">
+      <div className="flex overflow-scroll gap-1 lg:gap-2">
         {recommendations.map((show) => {
           return show.poster_path && <ThumbnailCard key={show.id} {...show} />;
         })}

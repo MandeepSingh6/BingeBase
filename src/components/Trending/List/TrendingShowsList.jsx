@@ -7,7 +7,7 @@ const TrendingShowsList = () => {
   return (
     <div className="mt-4">
       <h3 className="text-xl md:text-2xl font-bold">Trending Today</h3>
-      <div className="flex  overflow-scroll gap-1 lg:gap-2">
+      <div className="flex overflow-scroll gap-1 lg:gap-2">
         {trendingShows.map((show) => {
           return <ThumbnailCard key={show.id} {...show} />;
         })}

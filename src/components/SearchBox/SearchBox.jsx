@@ -32,7 +32,7 @@ const SearchBox = () => {
     <div className="relative md:min-w-[400px] lg:min-w-[600px] xl:min-w-[800px] border-2 rounded-md">
       <input
         type="text"
-        placeholder="Search TV Show"
+        placeholder="Search"
         className="pl-1 py-1 w-full"
         value={input}
         onChange={(e) => setInput(e.target.value)}
