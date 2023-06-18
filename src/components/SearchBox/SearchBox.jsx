@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCurrentShow } from "../../store/currentShowSlice";
 import { getRecommendations, getShow } from "../../apis/apiRequest";
 import { setRecommendedShows } from "../../store/recommendedShowsSlice";
@@ -10,6 +10,8 @@ const SearchBox = () => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const darkTheme = useSelector((state) => state.theme);
 
   const handleSubmit = async (e) => {
     if (e.key === "Enter" && input.trim() !== "") {
@@ -29,11 +31,15 @@ const SearchBox = () => {
   };
 
   return (
-    <div className="relative md:min-w-[400px] lg:min-w-[600px] xl:min-w-[800px] border-2 rounded-md">
+    <div
+      className={`relative md:min-w-[400px] lg:min-w-[600px] xl:min-w-[800px] border-2 rounded-md sm:mt-2 ${
+        darkTheme && "border-black"
+      }`}
+    >
       <input
         type="text"
         placeholder="Search"
-        className="pl-1 py-1 w-full"
+        className={`pl-1 py-1 w-full  ${darkTheme && "bg-gray-950"}`}
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyUp={handleSubmit}

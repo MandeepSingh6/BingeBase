@@ -3,6 +3,7 @@ import trendingShowsSlice from "./trendingShowsSlice";
 import recommendedShowsSlice from "./recommendedShowsSlice";
 import currentShowSlice from "./currentShowSlice";
 import watchListSlice from "./watchListSlice";
+import themeSlice from "./themeSlice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     recommendedShows: recommendedShowsSlice,
     currentShow: currentShowSlice,
     watchlist: watchListSlice,
+    theme: themeSlice,
   },
 });
 

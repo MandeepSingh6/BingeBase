@@ -10,6 +10,8 @@ const App = () => {
   const dispatch = useDispatch();
   const savedShows = useSelector((state) => state.watchlist);
   const trendingShows = useSelector((state) => state.trendingShows);
+  const darkTheme = useSelector((state) => state.theme);
+
   useEffect(() => {
     const fetchTrendingShows = async () => {
       const shows = await getTrendingShows();
@@ -27,7 +29,11 @@ const App = () => {
     return <h1>Loading...</h1>;
   }
   return (
-    <div className="p-1 md:p-2 lg:px-4 xl:px-16 xl:py-6 2xl:px-20 2xl:text-lg">
+    <div
+      className={`p-1 md:p-2 lg:px-4 xl:px-16 xl:py-6 2xl:px-20 2xl:text-lg ${
+        darkTheme && "bg-gray-900 text-white"
+      }`}
+    >
       <Header />
       <Outlet />
     </div>

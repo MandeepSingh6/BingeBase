@@ -14,7 +14,6 @@ const Hero = () => {
   const handleClick = () => {
     return dispatch(add(currentShow));
   };
-  console.log(currentShow);
   // const handlePosterClick = () => {
   //   setShowVideo(true);
   // };
