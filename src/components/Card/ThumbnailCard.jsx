@@ -37,7 +37,10 @@ const ThumbnailCard = ({
         onClick={() => handleClick()}
         alt={name}
       />
-      <div className="hidden group-hover:block bg-black text-white absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-lg w-[80%] text-center">
+      <div
+        onClick={() => handleClick()}
+        className="cursor-pointer hidden group-hover:block bg-black text-white absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-lg w-[80%] text-center"
+      >
         {name || title}
       </div>
       <button

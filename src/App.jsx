@@ -10,7 +10,6 @@ const App = () => {
   const dispatch = useDispatch();
   const savedShows = useSelector((state) => state.watchlist);
   const trendingShows = useSelector((state) => state.trendingShows);
-  console.log("first");
   useEffect(() => {
     const fetchTrendingShows = async () => {
       const shows = await getTrendingShows();

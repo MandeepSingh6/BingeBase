@@ -9,27 +9,27 @@ import { getYoutubeVideoId } from "../../apis/apiRequest";
 const Hero = () => {
   const dispatch = useDispatch();
   const currentShow = useSelector((state) => state.currentShow);
-  console.log(currentShow);
   const [trailerId, setTrailerId] = useState("");
   const [showVideo, setShowVideo] = useState(false);
   const handleClick = () => {
     return dispatch(add(currentShow));
   };
-  const handlePosterClick = () => {
-    setShowVideo(true);
-  };
+  console.log(currentShow);
+  // const handlePosterClick = () => {
+  //   setShowVideo(true);
+  // };
 
-  useEffect(() => {
-    const getId = async () => {
-      const id = await getYoutubeVideoId(
-        currentShow.media_type,
-        currentShow.id
-      );
-      setTrailerId(id);
-    };
-    getId();
-    return () => setShowVideo(false);
-  }, [currentShow]);
+  // useEffect(() => {
+  //   const getId = async () => {
+  //     const id = await getYoutubeVideoId(
+  //       currentShow.media_type,
+  //       currentShow.id
+  //     );
+  //     setTrailerId(id);
+  //   };
+  //   getId();
+  //   return () => setShowVideo(false);
+  // }, [currentShow]);
 
   return (
     <>
@@ -71,7 +71,7 @@ const Hero = () => {
               Add to watchlist
             </button>
           </h2>
-
+          <p className="text-sm">{currentShow.release_date}</p>
           <p className="flex items-center">
             <AiFillStar />
             {currentShow.vote_average.toFixed(1) < 1

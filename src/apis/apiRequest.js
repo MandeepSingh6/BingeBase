@@ -56,8 +56,6 @@ export const getShow = async (type, id) => {
         ? await axios.get(API_BASE_URL + "/movie/" + id + API_KEY_PARAMS)
         : await axios.get(API_BASE_URL + "/tv/" + id + API_KEY_PARAMS);
 
-    console.log(res.data);
-
     return { ...res?.data, media_type: type };
   }
 };
