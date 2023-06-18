@@ -13,7 +13,7 @@ import WatchlistPage from "./pages/WatchlistPage";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "https://binge-base.vercel.app",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
