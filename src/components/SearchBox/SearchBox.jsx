@@ -32,7 +32,7 @@ const SearchBox = () => {
 
   return (
     <div
-      className={`relative md:min-w-[400px] lg:min-w-[600px] xl:min-w-[800px] border-2 rounded-md sm:mt-2 ${
+      className={`relative md:min-w-[400px] lg:min-w-[600px] xl:min-w-[800px] border-2 rounded-md ${
         darkTheme && "border-black"
       }`}
     >

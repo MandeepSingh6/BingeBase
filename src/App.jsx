@@ -30,7 +30,7 @@ const App = () => {
   }
   return (
     <div
-      className={`p-1 md:p-2 lg:px-4 xl:px-16 xl:py-6 2xl:px-20 2xl:text-lg ${
+      className={`min-h-screen p-1 md:p-2 lg:px-4 xl:px-12 xl:py-2 2xl:px-20 2xl:text-lg ${
         darkTheme && "bg-gray-900 text-white"
       }`}
     >
