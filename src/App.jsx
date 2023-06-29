@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setTrendingShows } from "./store/trendingShowsSlice";
 import { setCurrentShow } from "./store/currentShowSlice";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const App = () => {
   const dispatch = useDispatch();
   const savedShows = useSelector((state) => state.watchlist);
@@ -36,6 +39,7 @@ const App = () => {
     >
       <Header />
       <Outlet />
+      <ToastContainer position="top-left" />
     </div>
   );
 };
