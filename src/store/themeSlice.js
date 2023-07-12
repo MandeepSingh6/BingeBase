@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const themeSlice = createSlice({
   name: "theme",
-  initialState: false,
+  initialState: true,
   reducers: {
     toggle: (state) => !state,
   },
